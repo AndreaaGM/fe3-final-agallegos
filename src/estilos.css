@@ -1,7 +1,18 @@
 .contenedor-navbar {
     display: flex;
-    width: 80vw;
+    width: 100%;
     justify-content: flex-start;
     padding: 1rem;
     list-style: none;
+  
+    
+  }
+  .dark-mode {
+    background-color: #333;
+    color: white;
+  }
+  
+  .light-mode {
+    background-color: white;
+    color: black;
   }

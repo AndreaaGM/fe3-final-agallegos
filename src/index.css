@@ -1,10 +1,28 @@
-body {
+html, body {
+  height: 100%;
   margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+main {
+  flex-grow: 1;  /* Hace que el main ocupe el espacio restante */
+  padding: 2rem;
+}
+.container {
+  min-height: calc(100vh - 70px); /* Restamos la altura del navbar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 code {
@@ -25,11 +43,57 @@ h1{
 
 nav{
   display: flex;
-  width: 80vw;
+  width: 100%;
   justify-content: flex-start;
   padding: 1rem;
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 1rem 2rem;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-list li {
+  margin: 0 1rem;
+}
+
+.navbar-list a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar-list a:hover {
+  color:#ccc;
+}
+
+.theme-button {
+  background-color:#ccc;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.theme-button:hover {
+  background-color:crimson;
+}
 a{
   color: #000;
   text-decoration: none;
@@ -43,22 +107,35 @@ a:hover{
 footer {
   display: flex;
   justify-content: center;
-  text-align: center;
+  align-items: center;
+  gap: 1rem;
   padding: 2rem;
-  position: relative;
-  bottom: 0;
-  width: 90%;
-  height: 40px;
-  margin-top: 2rem;
+  /* background-color: darkred; */
 }
 
-footer > img{
-  width: 200px;
-  margin: 0;
+footer img {
+  display: inline-block;
+  max-width: 50px; 
+  height: auto; 
+  background-color: rgba(30, 16, 16, 0.1); /* Fondo claro para modo claro */
+  padding: 5px;
+  border-radius: 50%;
 }
-footer > p{
+body.dark footer img {
+  background-color: rgba(255, 255, 255, 0.2); /* Fondo oscuro para modo oscuro */
+}
+
+footer p {
   margin: 0;
-  padding-top: 0.7rem;
+  padding-right: 1rem;
+}
+
+.footer-logo {
+  max-width: 100px; 
+}
+
+.footer-icon {
+  max-width: 40px; 
 }
 
 form{
